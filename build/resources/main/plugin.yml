@@ -1,0 +1,4 @@
+name: Hycraft-Jobs
+version: '1.0-SNAPSHOT'
+main: fr.justop.Hycraft_Jobs
+api-version: '1.19'
