@@ -12,10 +12,12 @@ public class JobsProfile {
 	private int pecheurXp;
 	private int bucheronXp;
 
+	private int exploXp;
+
 	private int browseSchema;
 	private int[] rewardsAchieved;
 
-	public JobsProfile(int mineurXp, int farmeurXp, int chasseurXp, int mecaXp, int pecheurXp, int bucheronXp, int browseSchema, int[] rewardsAchieved) {
+	public JobsProfile(int mineurXp, int farmeurXp, int chasseurXp, int mecaXp, int pecheurXp, int bucheronXp, int exploXp, int browseSchema, int[] rewardsAchieved) {
 		this.browseSchema = browseSchema;
 		this.bucheronXp = bucheronXp;
 		this.chasseurXp = chasseurXp;
@@ -24,6 +26,7 @@ public class JobsProfile {
 		this.mineurXp = mineurXp;
 		this.pecheurXp = pecheurXp;
 		this.rewardsAchieved = rewardsAchieved;
+		this.exploXp = exploXp;
 	}
 
 	@Override
@@ -36,7 +39,7 @@ public class JobsProfile {
 
 	@Override
 	public int hashCode() {
-		int result = Objects.hash(mineurXp, farmeurXp, chasseurXp, mecaXp, pecheurXp, bucheronXp, browseSchema);
+		int result = Objects.hash(mineurXp, farmeurXp, chasseurXp, mecaXp, pecheurXp, bucheronXp, exploXp, browseSchema);
 		result = 31 * result + Arrays.hashCode(rewardsAchieved);
 		return result;
 	}
@@ -50,6 +53,7 @@ public class JobsProfile {
 				", mecaXp=" + mecaXp +
 				", pecheurXp=" + pecheurXp +
 				", bucheronXp=" + bucheronXp +
+				", exploXp=" + exploXp +
 				", browseSchema=" + browseSchema +
 				", rewardsAchieved=" + Arrays.toString(rewardsAchieved) +
 				'}';
@@ -101,6 +105,14 @@ public class JobsProfile {
 
 	public void setBucheronXp(int bucheronXp) {
 		this.bucheronXp = bucheronXp;
+	}
+
+	public int getExploXp() {
+		return exploXp;
+	}
+
+	public void setExploXp(int exploXp) {
+		this.exploXp = exploXp;
 	}
 
 	public int getBrowseSchema() {

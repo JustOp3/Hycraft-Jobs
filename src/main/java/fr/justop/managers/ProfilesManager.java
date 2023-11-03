@@ -14,6 +14,10 @@ public class ProfilesManager {
 		return profiles.get(player.getUniqueId());
 	}
 
+	public static void addToMap(UUID uuid, JobsProfile profile) {
+		profiles.put(uuid, profile);
+	}
+
 	public static boolean isBrowsed(JobsProfile profile, String job) {
 		String number = String.valueOf(profile.getBrowseSchema());
 		String[] digits = number.split("(?<=.)");
@@ -36,6 +40,9 @@ public class ProfilesManager {
 
 			case "bucheron":
 				return Integer.parseInt(digits[5]) == 1;
+
+			case "explo":
+				return Integer.parseInt(digits[6]) == 1;
 
 			default:
 				return false;

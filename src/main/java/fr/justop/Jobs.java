@@ -9,6 +9,8 @@ import fr.justop.managers.DbManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.sql.SQLException;
+
 public final class Jobs extends JavaPlugin {
 
 	public static String PREFIX = "§8[§4Hycraft-Jobs§8]§r ";
@@ -19,6 +21,11 @@ public final class Jobs extends JavaPlugin {
 	public void onEnable() {
 		Bukkit.getServer().getConsoleSender().sendMessage(PREFIX + "§aSuccefully enabled!");
 		this.dbManager = new DbManager();
+		try {
+			this.dbManager.setupDatabase();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 		this.configsManager = new ConfigurationsManager(this);
 
 		onCommand();
